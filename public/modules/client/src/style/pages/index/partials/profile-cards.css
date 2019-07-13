@@ -1,0 +1,146 @@
+.dancers-profiles {
+    display: flex;
+    align-items: center;
+    transition: all .3s ease-out;
+}
+
+.dancer-profile-container {
+    width: 300px;
+    flex: 0 0 auto;
+    margin: 0 10px;
+    min-height: 100px;
+    position: relative;
+    transition: all .1s ease-out;
+}
+
+.dancer-profile-avatar {
+    transition: all .3s ease-out;
+    transform-style: preserve-3d;
+}
+
+.dancer-profile-card-prepared {
+    transform: perspective(450px) rotateY(-10deg);
+}
+
+.dancer-profile-card-reversed {
+    transform: perspective(450px) rotateY(10deg)
+}
+
+.dancer-profile-card-reversed:hover, .dancer-profile-card-prepared:hover{
+    cursor: pointer;
+}
+.dancer-profile-image {
+    width: 100%;
+    height: 455px;
+    background-position: center;
+    background-size: cover;
+}
+
+.arrowHidden {
+    width: 0;
+    position: absolute;
+    padding: 0;
+    display: none;
+    left: -10px;
+    top: 83px;
+    height: 40px;
+    transition: all .3s ease-out;
+}
+
+.arrowShowed:hover {
+    transform: translateZ(75px) translateX(10px);
+    cursor: pointer;
+}
+
+.arrowShowed {
+    transition: all .3s ease-out;
+    width: 50px;
+    position: absolute;
+    height: 40px;
+    overflow: hidden;
+    left: -10px;
+    top: 83px;
+    background: rgba(105, 68, 217, 0.49);
+    margin: auto;
+    transform: translateZ(3em);
+    z-index: 7;
+    padding: 0 10px;
+    box-shadow: 0 0 9px #cccccc00;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.dancer-profile-container:hover {
+    box-shadow: 0 0 50px 20px #6200ff7a;
+    transform: scale(1.1);
+}
+
+.dancer-profile-card-current {
+    box-shadow: 0 0 50px 20px #6200ff7a;
+    transform: scale(1.1);
+}
+
+.dancers-profiles {
+    overflow-x: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    min-height: 100px;
+    padding: 110px;
+    width: 800px;
+    color: #fff;
+    background-color: #c4c4c400;
+    white-space: nowrap;
+    margin-left: 50%;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    height: 450px;
+}
+
+
+.dancers-profiles::-webkit-scrollbar {
+    height: 10px;
+    border-radius: 10px;
+}
+
+.dancers-profiles::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 10px;
+    height: 10px
+}
+
+.dancers-profiles::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 10px;
+    height: 10px
+}
+
+.dancers-profiles::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    border-radius: 10px;
+    height: 10px
+}
+
+.dancer-profile-discription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    position: absolute;
+    background: rgba(26, 15, 59, 0.56);
+    right: 0;
+    margin: auto;
+    transform: translateZ(3em);
+    z-index: 2;
+    padding: 0 10px;
+    bottom: -10px;
+    box-shadow: 0 0 9px #cccccc61;
+    left: 0;
+    white-space: normal;
+}
+
+
+

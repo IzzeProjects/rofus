@@ -1,0 +1,50 @@
+.sidebar-wrapper{
+  display: flex;
+  flex-flow: column;
+  position: fixed;
+  right: -320px;
+  top: 0px;
+  height: 100%;
+  width: 320px;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+  z-index: 99;
+  transition: all .8s ease;
+}
+
+.sidebar-wrapper:focus {
+  outline: 0;
+}
+
+.sidebar__forms {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+}
+
+.sidebar__forms > div:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.sidebar__form {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #fff;
+  user-select: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.sidebar__form:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.sidebar-wrapper__close {
+  margin-bottom: 30px;
+}

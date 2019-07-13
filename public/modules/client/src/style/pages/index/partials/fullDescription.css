@@ -1,0 +1,132 @@
+.full-description-container {
+    flex: 0 0 auto;
+    padding: 10% 0 0 20%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.profile-container-full-description {
+    width: 300px;
+    flex: 0 0 auto;
+    transform: translateX(-400px);
+    min-height: 100px;
+    opacity: 0;
+    top: -50px;
+    left: -50px;
+    position: absolute;
+    transition: all .1s ease-out;
+}
+
+.main-images-slider-image {
+    width: 300px;
+    height: 400px;
+    background-size: contain;
+    margin: auto;
+    background-image: url(https://pp.userapi.com/c845418/v845418018/18893a/Zk2K7lx2iU4.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.man-info-hide-button {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    background-color: #232323;
+    right: 200px;
+    border-radius: 50%;
+    position: absolute;
+    background-image: url(/img/close.svg);
+    transition: all .3s ease;
+}
+
+.man-info-hide-button:hover {
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.man-info-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    opacity: 0;
+    position: relative;
+    flex-flow: wrap;
+    background: #000000db;
+    padding-left: 300px;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+
+.man-info {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.man-images-slider {
+    width: 100%;
+}
+
+.man-main-info-container {
+    width: 30%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    transform: translateX(-500px);
+}
+
+.man-additional-info {
+    width: 70%;
+    transform: translateX(-1500px);
+    text-align: center;
+}
+
+.man-society-img {
+    width: 20px;
+    filter: brightness(2.5);
+}
+
+.man-main-info {
+    text-align: center;
+}
+
+.man-society-img,
+.man-society-name,
+.man-society-url {
+    margin: 0 10px;
+}
+
+.man-age span,
+.man-city span,
+.man-fio span,
+.man-society-name,
+.man-society-url,
+.man-additional-info-header-text,
+.man-additional-info-text {
+    color: #ffffff;
+}
+
+.man-society-instagram,
+.man-society-vk,
+.man-society-facebook {
+    margin: 10px 0;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.man-age,
+.man-city,
+.man-fio,
+.man-additional-info-header-container {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.profile-container-full-description {
+    box-shadow: 0 0 50px 20px #6200ff7a;
+}
