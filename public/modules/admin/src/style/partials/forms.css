@@ -1,0 +1,222 @@
+.content-wrapper__form {
+  display: flex;
+  flex-flow: column;
+  max-width: 800px;
+}
+
+.content-wrapper-form__group {
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 40px;
+}
+
+.content-wrapper__request-errors__container {
+  color: red;
+  margin-bottom: 30px;
+}
+
+.form-group__label {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.form-group__field {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.form-group__field-file {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  width: 150px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.form-group__field-file__image {
+    display: block;
+    margin-top: 20px;
+    width: 400px;
+}
+
+.form-group__field-file:hover {
+    background: #fff;
+    color: #000;
+}
+
+select.form-group__field{
+  padding: 0 20px;
+  height: 40px;
+}
+
+.content-wrapper__form-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  border: 2px solid #fff;
+  height: 50px;
+  color: #fff;
+  min-width: 150px;
+  margin-left: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  cursor: pointer;
+  transition: all .2s ease;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.content-wrapper__form-button:hover {
+  background-color: #fff;
+  color: #000;
+  transition: all .2s ease;
+}
+
+input.form-group__field {
+  height: 40px;
+}
+
+textarea.form-group__field {
+  height: 80px;
+  resize: vertical;
+}
+
+i.delete {
+  color: #000;
+  width: 20px !important;
+  height: 20px !important;
+  background-size: cover;
+  position: absolute;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF/SURBVGhD7dk7TsNAFIVhNyDRAw1iDdCxEKBiK+yAhn3w7lgGj9Ah1sACkOAc4EgjyxM745nr62h+6SiPwplPitOkqdVqtbXrCDv+e2reJnaObf2+GhERn9gXdso3DCPiAfvGHrFkjBC8EGeJCRFaMuYE4+HDi1lguhDcG7aNJcVDW2KWIXaxUVlhiiJUaYwJQpXCmCJUbswkCJULMylCjcW4QKhUjCuEWhXjEqGGYlwjVB9mFggVw5xhs0GoLkzXXCNUH2YWCMWvUxfiA5sNInZjc+EPgOuWITT3GCLusfbB+XVq3zNuMUTcYeFhOd3YXT8A7jAxxAILb2zXmKEI5RJDxC0WHoqLIZQrDBE3WHgYjogdrC8XmBjiFRuCUJNiciHUJBgirrHwQ7kXLAWhTDEbWAmEMsGURqiiGCKusPDi3DOWE6GKYKwRKjvmEgsvxj1hJREqhjnAVm4fe8esEaqNucCSE8YaoYQZhVB7WPI/RRk6/H+s1Wq1talpfgDwXHHnhZP5QwAAAABJRU5ErkJggg==');
+  top: 4px;
+  background-size: cover;
+  right: 2px;
+}
+
+.ui.selection.dropdown {
+  box-sizing: border-box;
+}
+
+a.ui.label {
+  position: relative;
+  width: 60px;
+}
+
+.required:after {
+  content: ' *';
+  color: red;
+}
+
+.form-delete-button {
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form-delete-button:hover {
+  text-decoration: underline;
+}
+
+.content-wrapper__form-buttons {
+  display: flex;
+    margin-left: auto;
+}
+
+.content-wrapper__form-buttons .content-wrapper__form-button  {
+  margin: 0;
+}
+.content-wrapper__form-buttons .content-wrapper__form-button:not(:last-child) {
+  margin-right: 20px;
+}
+
+.content-wrapper-nav__search-button {
+  background: transparent;
+  background-image: resolve('search.svg');
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.content-wrapper__tabs {
+  display: flex;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 800px;
+  border-bottom: 1px solid #fff;
+}
+
+.content-wrapper__tab {
+  box-sizing: border-box;
+  padding: 10px 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tab-active {
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-top: 1px solid;
+}
+
+.content-wrapper__tab:hover {
+  text-decoration: underline;
+}
+
+.tab-form-active {
+  display: block;
+}
+
+.field-file-iterator {
+  margin-left: auto;
+  margin-top: 30px;
+}
+
+.form-group__iterator-image_container {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  border-left: 1px solid;
+  box-sizing: border-box;
+  padding-left: 15px;
+  transition: all .4s ease;
+}
+
+.form-group__iterator-image_container:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.iterator-image-name {
+  margin: 20px 0;
+}
+
+.form-group__iterator-drag {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: resolve('drag.svg');
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.flip-list-move {
+  transition: transform 0.5s;
+}
+
+.no-move {
+  transition: transform 0s;
+}
+
+.content-wrapper__tab-form {
+  display: none;
+}
+
+.tab-form-default {
+  display: block;
+}
+
+
+

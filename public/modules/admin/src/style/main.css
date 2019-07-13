@@ -1,0 +1,10 @@
+@import "../../node_modules/normalize.css/normalize.css";
+@import "default.css";
+@import "fonts.css";
+@import "partials/content.css";
+@import "partials/header.css";
+@import "partials/sidebar.css";
+@import "partials/main.css";
+@import "partials/forms.css";
+@import "partials/login.css";
+

@@ -1,0 +1,117 @@
+.content-wrapper {
+  display: flex;
+  width: 1200px;
+  flex-flow: column;
+  padding: 60px 60px 200px;
+}
+
+.content-wrapper__title {
+  width: 100%;
+  font-size: 46px;
+}
+
+.content-wrapper__nav {
+  margin-left: auto;
+  display: flex;
+}
+
+.content-wrapper__nav > div:not(:last-child) {
+  margin-right: 50px;
+}
+
+.content-wrapper-nav__search-input {
+  height: 50px;
+  padding: 15px;
+  box-sizing: border-box;
+  margin-right: 20px;
+}
+
+.content-wrapper-nav__search-icon {
+  background-image: resolve('search.svg');
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+}
+
+.content-wrapper-nav__search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.content-wrapper__records {
+  display: flex;
+  flex-flow: column;
+  margin-top: 50px;
+}
+
+.content-wrapper__table {
+  width: 100%;
+  text-align: center;
+  vertical-align: center;
+  border-collapse: collapse;
+}
+
+.content-wrapper__table a:hover {
+    text-decoration: underline;
+}
+
+.content-wrapper__table th, .content-wrapper__table td {
+  border: 2px solid #fff;
+}
+
+.content-wrapper__table tr {
+  height: 50px;
+}
+
+.content-wrapper__table-edit {
+  width: 200px;
+}
+
+.content-wrapper__table-edit {
+  width: 100px;
+}
+
+.content-wrapper__table-id {
+  width: 40px;
+}
+
+.content-wrapper__records-pagination {
+  display: flex;
+  margin-top: 30px;
+  margin-left: auto;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.records-pagination_item, .records-pagination_item-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pagination_item-active {
+  background: #fff;
+  color: #000;
+}
+
+
+.records-pagination_item-dots {
+  cursor: auto;
+  margin-right: 5px;
+}
+
+.records-pagination_item:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.records-pagination_item:not(:last-child) {
+  margin-right: 5px;
+}

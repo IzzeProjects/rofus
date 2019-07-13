@@ -1,0 +1,28 @@
+{% extends "template/layout.twig" %}
+
+{% block page %}
+    <div class="content">
+        <div class="header-wrapper">
+            <div class="header-wrapper__content">
+                <div class="header-wrapper__title">
+                    Admin
+                </div>
+                <div class="header-wrapper__action-panel">
+                    <a href="#" class="header-wrapper__site">
+                        <div class="header-wrapper__icon header-wrapper-site__icon"></div>
+                        <div class="header-wrapper__text">Перейти на сайт</div>
+                    </a>
+                    <a href="#" class="header-wrapper__logout">
+                        <div class="header-wrapper__icon header-wrapper-logout__icon"></div>
+                        <div class="header-wrapper__text">Выйти</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="content-row">
+            {% include 'template/partials/sidebar.twig' %}
+            {% include 'template/index/content.twig' %}
+
+        </div>
+    </div>
+{% endblock %}

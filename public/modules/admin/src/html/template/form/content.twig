@@ -1,0 +1,41 @@
+<div class="content-wrapper">
+    <div class="content-wrapper__title">Новости</div>
+    <div class="content-wrapper__nav content-wrapper__form-button">
+        Добавить
+    </div>
+    <div class="content-wrapper__records">
+        <form action="/check" method="get" >
+            <div class="content-wrapper__form">
+                <div class="content-wrapper-form__group">
+                    <div class="form-group__label">Input field</div>
+                    <input type="text" name="input" class="form-group__field">
+                </div>
+                <div class="content-wrapper-form__group">
+                    <div class="form-group__label">Textarea field</div>
+                    <textarea name="textarea" class="form-group__field"></textarea>
+                </div>
+                <div class="content-wrapper-form__group">
+                    <div class="form-group__label">Redactor field</div>
+                    <textarea name="textarea" class="form-group__field js-redactor"></textarea>
+                </div>
+                <div class="content-wrapper-form__group">
+                    <div class="form-group__label">Select single</div>
+                    <select-single name="category_id"
+                                   items='[{"id":1,"name":"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f1","slug":"cat1","status":1},{"id":2,"name":"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f2","slug":"cat2","status":1},{"id":3,"name":"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f3","slug":"cat3","status":1}]'
+                                   value="id"
+                                   text="name"
+                                   old=""></select-single>
+                </div>
+                <div class="content-wrapper-form__group">
+                    <div class="form-group__label">Select multi</div>
+                    <select-multi name="categories"
+                                  items='[{"id":1,"name":"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f1","slug":"cat1","status":1},{"id":2,"name":"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f2","slug":"cat2","status":1},{"id":3,"name":"\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f3","slug":"cat3","status":1}]'
+                                  value="id"
+                                  text="name"
+                                  old=""></select-multi>
+                </div>
+                <button type="submit" class="content-wrapper__form-button">Отправить</button>
+            </div>
+        </form>
+    </div>
+</div>
