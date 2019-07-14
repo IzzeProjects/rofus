@@ -14,6 +14,6 @@
     </div>
     <div class="main-wrapper main-cards-container" style="background-image: url('{{asset('/modules/client/build/img/background1.jpg')}}')">
         <full-description></full-description>
-        <main-cards coefficient="15"></main-cards>
+        <main-cards coefficient="15" members="{{json_encode($members)}}"></main-cards>
     </div>
 @stop

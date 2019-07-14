@@ -16,7 +16,7 @@
                 <div class="man-main-info-container">
                     <div class="man-main-info">
                         <div class="man-fio">
-                            <span>Александра Иванченко</span>
+                            <span>{{info.first_name}} {{info.surname}}</span>
                         </div>
                         <div class="man-age">
                             <span>Возраст: 18</span>
@@ -119,9 +119,10 @@
             }
         },
         mounted() {
-            this.$root.$on('selectedCard', (elem) => {
+            this.$root.$on('selectedCard', (member) => {
                 this.show = true
-                this.info = elem
+                this.info = member
+                console.log(member);
             })
         },
         name: "FullDescription"

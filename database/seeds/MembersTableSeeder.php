@@ -23,7 +23,7 @@ class MembersTableSeeder extends Seeder
                 'vk' => Str::words(20),
                 'twitter' => Str::words(20),
                 'info' => Str::random(200),
-                'image' => '/storage/photos/shares/______________.jpg',
+                'image' => '/storage/photos/shares/O8EvhDPChWw.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
