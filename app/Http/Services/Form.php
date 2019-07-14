@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: izzep
- * Date: 07.07.2019
- * Time: 13:21
- */
 
 namespace App\Http\Services;
-
 
 class Form
 {

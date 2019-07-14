@@ -39,7 +39,7 @@
     right: 200px;
     border-radius: 50%;
     position: absolute;
-    background-image: url(/img/close.svg);
+    background-image: resolve("close.svg");
     transition: all .3s ease;
 }
 

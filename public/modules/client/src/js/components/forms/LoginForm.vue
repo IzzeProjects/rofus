@@ -6,8 +6,19 @@
             <div class="modal-wrapper__close js-modal-close" data-modal-close="login"></div>
             <div class="modal-wrapper__title">Вход</div>
             <form
-                    @submit="checkForm"
+                :method="method"
+                :action="url"
+                @submit.prevent="checkForm"
             >
+                <div v-for="error in serverErrors" class="login-wrapper-from__error-container">
+                    <div
+                        class="modal-wrapper-form__error"
+                        v-for="message in error"
+                    >
+                        {{message}}
+                    </div>
+                </div>
+                <input type="hidden" name="_token" :value="token">
                 <div class="modal-wrapper__form">
                     <div class="modal-wrapper-form__group">
                         <label for="login-email" class="required">Email:</label>
@@ -33,24 +44,43 @@
 </template>
 
 <script>
+    import axios from 'axios'
+
     export default {
         name: "LoginForm",
         props: ['url', 'method'],
         data() {
             return {
                 email: null,
-                password: null
+                password: null,
+                token: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                serverErrors: []
             }
         },
+        mounted() {
+            this.$validator.pause()
+        },
         methods: {
-            checkForm(e) {
+            checkForm() {
+                this.$validator.resume()
                 this.$validator.validateAll().then((result) => {
                     if (result) {
-                        console.log('fields are ok');
-                        return;
+                        axios({
+                            method: this.method,
+                            url: this.url,
+                            data: {
+                                email: this.email,
+                                password: this.password,
+                                _token: this._token
+                            },
+                        })
+                            .then(response => {
+                                window.location.href = response.data.redirect
+                            })
+                            .catch(error => {
+                                this.serverErrors = error.response.data
+                            });
                     }
-                    console.log('errors here');
-                    e.preventDefault();
                 })
             }
         }

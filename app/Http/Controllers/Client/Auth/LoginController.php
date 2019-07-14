@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Auth;
+namespace App\Http\Controllers\Client\Auth;
 
 use App\Http\Controllers\Controller;
+use GrahamCampbell\Throttle\Facades\Throttle;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -37,16 +38,18 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        $this->redirectTo = route('index');
         $this->middleware('guest')->except('logout');
-    }
-
-    public function showLoginForm()
-    {
-        return view('admin.auth.login');
     }
 
     public function login(Request $request)
     {
+
+        if (!$this->throttleCheck($request, 20, 1)) {
+            return response()
+                ->json(['auth' => ['Много попыток авторизации !']])
+                ->setStatusCode(429);
+        }
 
         $validator = Validator::make($request->all(), [
             'email' => 'required|exists:users',
@@ -54,30 +57,26 @@ class LoginController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()
-                ->back()
-                ->withErrors($validator)
-                ->withInput();
+            return response()
+                ->json($validator->getMessageBag()->getMessages())
+                ->setStatusCode(400);
         }
 
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            if (Auth::user()->hasRole('admin')) {
-                return redirect()->route('admin.members.index');
-            } else {
-                $this->guard()->logout();
-                $request->session()->invalidate();
-                $validator->getMessageBag()->add('auth', 'Не достаточно прав для авторизации');
-            }
+            return response()
+                ->json([
+                    'redirect' => $this->redirectTo,
+                    'user' => Auth::user()
+                ]);
         } else {
             $validator->getMessageBag()->add('auth', trans('auth.failed'));
+            return response()
+                ->json($validator->getMessageBag()->getMessages())
+                ->setStatusCode(401);
         }
 
-        return redirect()
-            ->back()
-            ->withErrors($validator)
-            ->withInput();
     }
 
     public function logout(Request $request)
@@ -86,7 +85,8 @@ class LoginController extends Controller
 
         $request->session()->invalidate();
 
-        return redirect()->route('admin.login.form');
+        return redirect()->back();
     }
+
 
 }

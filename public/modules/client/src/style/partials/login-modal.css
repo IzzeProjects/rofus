@@ -93,8 +93,11 @@
   margin-top: 10px;
 }
 
-.is-valid {
-  border: 2px solid #00f300;
+.modal-wrapper-form__success {
+  color: #00c400;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .is-invalid {

@@ -232,7 +232,10 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Form' => \App\Http\Facades\Form::class,
-        'Image' => Intervention\Image\Facades\Image::class
+        'Logout' => \App\Http\Facades\Logout::class,
+
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Throttle' => GrahamCampbell\Throttle\Facades\Throttle::class
 
     ],
 

@@ -24,6 +24,17 @@ class BladeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->adminDirectives();
+
+        $this->clientDirectives();
+    }
+
+
+    /**
+     * Admin directives
+     */
+    private function adminDirectives()
+    {
         Blade::directive('input', function ($expression) {
             return "<?php echo Form::input($expression); ?>";
         });
@@ -55,4 +66,11 @@ class BladeServiceProvider extends ServiceProvider
             return "<?php echo Form::delete($expression); ?>";
         });
     }
+
+    private function clientDirectives() {
+        Blade::directive('logout', function ($expression) {
+            return "<?php echo Logout::logout($expression); ?>";
+        });
+    }
+
 }

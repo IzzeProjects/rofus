@@ -1,9 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Client\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use GrahamCampbell\Throttle\Facades\Throttle;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -28,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -37,13 +41,14 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        $this->redirectTo = route('index');
         $this->middleware('guest');
     }
 
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -58,7 +63,7 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \App\User
      */
     protected function create(array $data)
@@ -69,4 +74,39 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    public function register(Request $request)
+    {
+        if (!$this->throttleCheck($request, 20, 1)) {
+            return response()
+                ->json(['auth' => ['Много попыток регистрации !']])
+                ->setStatusCode(429);
+        }
+
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()
+                ->json($validator->getMessageBag()->getMessages())
+                ->setStatusCode(400);
+        }
+
+        $user = $this->create($request->all());
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return response()
+                ->json([
+                    'redirect' => $this->redirectTo,
+                    'user' => $user
+                ]);
+        }
+
+    }
+
 }
