@@ -58,10 +58,12 @@ class MemberController extends Controller
         $member = $this->member->fill($request->except('images'));
         $member->save();
         foreach ($request->input('images', []) as $image){
-            $member->images()->create([
-                'name' => $image['name'],
-                'image' => $image['image'],
-            ]);
+            if(isset($image['image'])){
+                $member->images()->create([
+                    'name' => $image['name'],
+                    'image' => $image['image'],
+                ]);
+            }
         }
         return redirect()->route('admin.members.edit', $member);
     }
@@ -90,10 +92,12 @@ class MemberController extends Controller
         $member->save();
         $member->images()->delete();
         foreach ($request->input('images', []) as $image){
-            $member->images()->create([
-                'name' => $image['name'],
-                'image' => $image['image'],
-            ]);
+            if(isset($image['image'])){
+                $member->images()->create([
+                    'name' => $image['name'],
+                    'image' => $image['image'],
+                ]);
+            }
         }
         return redirect()->back();
     }
