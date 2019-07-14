@@ -1,5 +1,7 @@
 <?php
 
+@mkdir('storage/app/public/photos');
+@mkdir('storage/app/public/photos/shares');
 function recurse_copy($src,$dst) {
     $dir = opendir($src);
     @mkdir($dst);
