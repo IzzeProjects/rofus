@@ -36,6 +36,10 @@
                         @file('image', $member->image)
                     </div>
                     <div class="content-wrapper-form__group">
+                        <div class="form-group__label required">Возраст</div>
+                        @input('age', 'text', false, $member->age)
+                    </div>
+                    <div class="content-wrapper-form__group">
                         <div class="form-group__label">Инфо</div>
                         @textarea('info', false, $member->info)
                     </div>

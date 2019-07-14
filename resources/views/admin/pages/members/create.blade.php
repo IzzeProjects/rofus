@@ -30,6 +30,10 @@
                         @file('image')
                     </div>
                     <div class="content-wrapper-form__group">
+                        <div class="form-group__label ">Возраст</div>
+                        @input('age', 'text')
+                    </div>
+                    <div class="content-wrapper-form__group">
                         <div class="form-group__label">Анонс</div>
                         @textarea('info')
                     </div>

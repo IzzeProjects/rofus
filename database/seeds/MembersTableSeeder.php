@@ -18,6 +18,7 @@ class MembersTableSeeder extends Seeder
                 'first_name' => 'Александра',
                 'surname' => 'Иванченко',
                 'city' => 'Москва',
+                'age' => rand(1, 50),
                 'instagram' => Str::random(20),
                 'facebook' => Str::random(20),
                 'vk' => Str::words(20),

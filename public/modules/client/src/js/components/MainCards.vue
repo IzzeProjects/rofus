@@ -71,11 +71,6 @@
                 }
             },
             cardClick(member) {
-                // this.$root.$emit('selectedCard', {
-                //     "first_name": "Имя",
-                //     "surname": "Фамилия",
-                //     "image": "https://pp.userapi.com/c849228/v849228127/10a785/c05R77j11Gw.jpg"
-                // })
                 this.$root.$emit('selectedCard', member)
             }
         },
