@@ -55,7 +55,7 @@
                         <div class="modal-wrapper-form__error">{{ errors.first('password_confirmation') }}</div>
                     </div>
                     <a href="#" class="modal-wrapper-form__forgot">Забыли пароль ?</a>
-                    <button type="submit" class="modal-wrapper-form__button">Отправить</button>
+                    <button type="submit" class="modal-wrapper-form__button" :disabled="validateResult">Отправить</button>
                 </div>
             </form>
         </div>
@@ -75,7 +75,8 @@
                 password: null,
                 password_confirmation: null,
                 token: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                serverErrors: []
+                serverErrors: [],
+                validateResult: false
             }
         },
         mounted() {
@@ -94,6 +95,7 @@
                 this.$validator.resume()
                 this.$validator.validateAll().then((result) => {
                     if (result) {
+                        this.validateResult = result
                         axios({
                             method: this.method,
                             url: this.url,
@@ -106,6 +108,7 @@
                             },
                         })
                             .then(response => {
+                                this.validateResult = true
                                 window.location.href = response.data.redirect
                             })
                             .catch(error => {

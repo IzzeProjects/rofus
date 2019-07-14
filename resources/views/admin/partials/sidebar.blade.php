@@ -31,5 +31,18 @@
                 </a>
             </div>
         </div>
+        <div class="sidebar-wrapper__item">
+            <div class="sidebar-wrapper-item__wrapper js-menu-item" data-toggle="3">
+                <div class="sidebar-wrapper-item__icon"
+                     style="background-image: url('{{asset('/assets/admin/icons/feedback.svg')}}')"></div>
+                <div class="sidebar-wrapper-item__text">Заявки</div>
+            </div>
+            <div class="sidebar-wrapper-item__sub-items js-menu-item-toggle" data-toggle="3">
+                <a href="{{route('admin.feedback.index')}}" class="sidebar-wrapper-item__sub-item">
+                    <div class="item__sub-item__dot"></div>
+                    <div>Список</div>
+                </a>
+            </div>
+        </div>
     </div>
 </div>

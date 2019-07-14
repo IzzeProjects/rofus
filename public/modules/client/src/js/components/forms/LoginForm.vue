@@ -36,7 +36,7 @@
                                data-vv-as="Пароль">
                         <div class="modal-wrapper-form__error">{{ errors.first('password') }}</div>
                     </div>
-                    <button type="submit" class="modal-wrapper-form__button">Войти</button>
+                    <button type="submit" class="modal-wrapper-form__button" :disabled="validateResult">Войти</button>
                 </div>
             </form>
         </div>
@@ -54,7 +54,8 @@
                 email: null,
                 password: null,
                 token: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                serverErrors: []
+                serverErrors: [],
+                validateResult: false
             }
         },
         mounted() {
@@ -64,6 +65,7 @@
             checkForm() {
                 this.$validator.resume()
                 this.$validator.validateAll().then((result) => {
+                    this.validateResult = result
                     if (result) {
                         axios({
                             method: this.method,
@@ -75,6 +77,7 @@
                             },
                         })
                             .then(response => {
+                                this.validateResult = true
                                 window.location.href = response.data.redirect
                             })
                             .catch(error => {

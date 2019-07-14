@@ -19,3 +19,8 @@ Route::prefix('members')->name('members.')->group(function () {
     Route::post('/image/iterator', 'Member\MemberController@imageIterator')->name('image.iterator');
 });
 
+/**
+ * Feedback
+ */
+Route::resource('feedback', 'Feedback\FeedbackController')->only(['index', 'destroy']);
+

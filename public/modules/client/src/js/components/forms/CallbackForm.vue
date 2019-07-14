@@ -48,7 +48,7 @@
                                data-vv-as="Email">
                         <div class="modal-wrapper-form__error">{{ errors.first('email') }}</div>
                     </div>
-                    <button type="submit" class="modal-wrapper-form__button">Отправить</button>
+                    <button type="submit" class="modal-wrapper-form__button" :disabled="validateResult">Отправить</button>
                 </div>
             </form>
         </div>
@@ -68,7 +68,8 @@
                 email: null,
                 token: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
                 serverErrors: [],
-                message: ''
+                message: '',
+                validateResult: false
             }
         },
         mounted() {
@@ -78,6 +79,7 @@
             checkForm() {
                 this.$validator.resume()
                 this.$validator.validateAll().then((result) => {
+                    this.validateResult = result
                     if (result) {
                         axios({
                             method: this.method,
@@ -95,6 +97,7 @@
                                 this.name = ''
                                 this.phone = ''
                                 this.email = ''
+                                this.validateResult = false
                             })
                             .catch(error => {
                                 this.serverErrors = error.response.data
