@@ -25,24 +25,21 @@
                             <span>Город: {{info.city}}</span>
                         </div>
                     </div>
-                    <div class="man-society-info">
+                    <div class="man-society-info" v-show="info.vk != null">
                         <div class="man-society-instagram">
                             <img src="https://images.vexels.com/media/users/3/131142/isolated/preview/42686c238da2892da4bdea221bada9a6-instagram-flat-icon-by-vexels.png"
                                  alt="" class="man-society-img">
-                            <p class="man-society-name">Вконтакте</p>
-                            <a :href="info.vk" class="man-society-url">{{info.vk}}</a>
+                            <a :href="info.vk" class="man-society-url">VK</a>
                         </div>
-                        <div class="man-society-vk">
+                        <div class="man-society-vk" v-show="info.instagram != null">
                             <img src="https://images.vexels.com/media/users/3/131142/isolated/preview/42686c238da2892da4bdea221bada9a6-instagram-flat-icon-by-vexels.png"
                                  alt="" class="man-society-img">
-                            <p class="man-society-name">Instagram</p>
-                            <a :href="info.instagram" class="man-society-url">{{info.instagram}}</a>
+                            <a :href="info.instagram" class="man-society-url">Instagram</a>
                         </div>
-                        <div class="man-society-facebook">
+                        <div class="man-society-facebook" v-show="info.facebook != null">
                             <img src="https://images.vexels.com/media/users/3/131142/isolated/preview/42686c238da2892da4bdea221bada9a6-instagram-flat-icon-by-vexels.png"
                                  alt="" class="man-society-img">
-                            <p class="man-society-name">Facebook</p>
-                            <a :href="info.facebook" class="man-society-url">{{info.facebook}}</a>
+                            <a :href="info.facebook" class="man-society-url">Facebook</a>
                         </div>
                     </div>
 

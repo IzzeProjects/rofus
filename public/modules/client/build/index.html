@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
+<body>
+<div id="app">
+    
+    <div class="main-wrapper" style="background-image: url('img/background0.jpg')">
+        <div class="main-header">
+    <div class="content main-content">
+        <div class="main-header__row">
+            <div class="main-header__toggle js-sidebar-open">
+                <svg version="1.1" id="header_menu_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 400" enable-background="new 0 0 500 400" xml:space="preserve">
+                    
+                    <line id="first_line" fill="none" stroke="#fff" stroke-width="35" stroke-miterlimit="10" x1="0" y1="140.2" x2="300.7" y2="140.2"/>
+                    <line id="second_line" fill="none" stroke="#fff" stroke-width="35" stroke-miterlimit="10" x1="0" y1="260.3" x2="466.3" y2="260.3"/>
+                    <line id="third_line" fill="none" stroke="#fff" stroke-width="35" stroke-miterlimit="10" x1="0" y1="383.5" x2="374.8" y2="383.5"/>
+                </svg>
+            </div>
+            <div class="main-header-menu__socials">
+                <div class="main-header-menu__social"></div>
+                <div class="main-header-menu__social"></div>
+                <div class="main-header-menu__social"></div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content main-content mod-center">
+            <div class="main-header__row mod-center">
+                <div class="main-title-container">
+                    <h1 class="main-title">Reflection Of Us</h1>
+                    <div class="main-subtitle">Cover Dance Team</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-wrapper main-cards-container" style="background-image: url('img/background1.jpg')">
+        <full-description></full-description>
+        <main-cards coefficient="15"></main-cards>
+    </div>
+    <login-form url="/login" method="POST"></login-form>
+    <register-form url="/register" method="POST"></register-form>
+    <callback-form url="/callback" method="POST"></callback-form>
+
+
+    <div tabindex="0" autofocus class="sidebar-wrapper js-sidebar">
+    <div class="sidebar-wrapper__close modal-wrapper__close js-sidebar-close"></div>
+    <div class="sidebar__forms">
+        <div class="sidebar__form js-modal-open" data-modal-open="callback">Обратный звонок</div>
+        <div class="sidebar__form js-modal-open" data-modal-open="login">Вход</div>
+        <div class="sidebar__form js-modal-open" data-modal-open="register">Регистрация</div>
+    </div>
+</div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
