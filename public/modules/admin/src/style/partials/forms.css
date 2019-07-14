@@ -61,7 +61,7 @@ select.form-group__field{
   min-width: 150px;
   margin-left: auto;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 15px;
   cursor: pointer;
   transition: all .2s ease;
   animation: 1s ease-out 0s 1 slideInFromLeft;
