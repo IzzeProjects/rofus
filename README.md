@@ -1,2 +1,4 @@
 # rofus
-test vue,  laravel project
+composer install <br>
+php artisan migrate --seed <br>
+
