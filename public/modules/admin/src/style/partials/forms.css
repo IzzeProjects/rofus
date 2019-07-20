@@ -35,14 +35,14 @@
 }
 
 .form-group__field-file__image {
-    display: block;
-    margin-top: 20px;
-    width: 400px;
+  display: block;
+  margin-top: 20px;
+  height: 200px;
 }
 
 .form-group__field-file:hover {
-    background: #fff;
-    color: #000;
+  background: #fff;
+  color: #000;
 }
 
 select.form-group__field{

@@ -156,7 +156,8 @@ gulp.task('style:dev', function () {
         .pipe(sourcemaps.write())
         .pipe(postcss([assets({
             basePath: "build/",
-            loadPaths: ["**"]
+            loadPaths: ["**"],
+            relative: true
         }), autoprefixer()]))
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
